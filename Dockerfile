@@ -1,5 +1,4 @@
-FROM openjdk:17-jdk-alpine
-WORKDIR /app
-COPY target/my-assured:2.0.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM python:3.6-slim
+RUN pip install robotframework==3.1.2
+WORKDIR /robot/tests
+CMD ["robot", "--outputdir", "/robot/results", ".
